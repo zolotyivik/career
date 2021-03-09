@@ -1,0 +1,47 @@
+@use 'help/tb' as tb
+@use 'help/colors' as c
+
+
+
+.tables-block-wrap
+  
+  
+  
+  
+  .table-wrap
+
+
+    
+    
+    .wrap-inner
+      padding: tb.$padding
+      margin: tb.$margin
+      border-radius: tb.$radius
+      background: c.$lignt-bg
+      &.closed
+        @include c.hover(c.$lignt-bg)
+      h5 
+        transition: .3s
+        margin-bottom: 0
+        svg 
+          transition: .3s
+          width: 1.2em
+          height: 1.2em
+
+      &.opened 
+        svg 
+          transform: rotateZ(180deg)
+        h5 
+          margin-bottom: 2rem
+    .opener-title
+      @include c.hover(c.$lignt-bg)
+      
+
+
+    .careere-table
+      transition: .3s
+      margin-bottom: 0
+      // padding: tb.$padding * 2
+      // padding-top: tb.$padding
+      tr.me 
+        background: c.$yellow-bg

@@ -1,0 +1,45 @@
+@use 'help/sizes' as s
+@use 'help/colors' as c
+@use 'help/hb'
+@use 'help/ani'
+
+.header-block-wrap
+  // min-height: hb.$height
+  margin: hb.$margin
+  padding: hb.$padding
+  background: c.$lignt-bg
+  display: flex
+  border-radius: hb.$radius
+
+  &-animation
+    margin: hb.$margin
+    padding: hb.$padding
+    display: flex
+    border-radius: hb.$radius
+    @include ani.headerAni(3s)
+
+  .h-border-wrap
+    border: 2px solid #fff
+    height: 100%
+    border-radius: 6px
+    padding: hb.$padding/2
+    // display: flex
+
+  .h-lil-wrap
+    // padding: hb.$padding
+    text-align: center
+    h5
+      margin: 0
+      color: c.$dark-c
+
+  .circles
+    position: relative
+    .circle-wrap
+
+      margin-left: 20px
+
+
+    .money
+      position: absolute
+      right: 0
+      bottom: 0

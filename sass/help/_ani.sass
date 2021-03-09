@@ -1,0 +1,20 @@
+@use 'colors' as c
+$header-color : c.$lignt-bg
+  
+  
+@keyframes headerAni
+  0%
+    background: $header-color
+
+  50%
+    background: lighten($header-color, 2)
+    
+  100%
+    background: $header-color
+
+
+
+@mixin headerAni($time : 2s)
+  animation: headerAni $time infinite
+  
+    
