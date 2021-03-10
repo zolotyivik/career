@@ -121,7 +121,7 @@ class HeaderBlock extends Component {
             <div className="col-9 circles">
 
               <div className="ml-3">
-                <p className="m-0 ml-2 text-secondary">процент вiд кращого:</p>
+                <p className="m-0 ml-2 text-secondary">вiдсоток вiд кращого:</p>
                 <div className="p-1">
                   <HeaderBorderWrap>
                     <div className="d-flex">
