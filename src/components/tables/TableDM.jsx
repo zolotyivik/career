@@ -107,10 +107,11 @@ class Table extends Component {
 
 
   async getTable() {
-    let url = window.zv.apiLink + "local/career/getTable";
+    let url = window.zv.apiLink + "local/career/getTableDM";
     let data = {
       user_id: window.zv.user_id,
-      value: this.props.item.value
+      value: this.props.item.value,
+      cat: this.props.cat
     }
 
     let res = await ffetch(url, data);

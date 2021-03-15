@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import StatusCircle from "./elems/StatusCircle";
 import Category from "./header/Category";
 import HeaderBorderWrap from "./header/HeaderBorderWrap";
@@ -31,17 +30,17 @@ class HeaderBlock extends Component {
   }
 
   getColors(value) {
-    if (value >= 10 && value <= 28) {
+    if (value < 85) {
       return ["#dc3545", "#9e2430"];
-    } else if (value >= 29 && value <= 51) {
+    } else if (value >= 85 && value <= 90) {
       return ["#ca371f", "#9e2430"];
-    } else if (value >= 52 && value <= 75) {
+    } else if (value >= 91 && value <= 95) {
       return ["#dc5c35", "#ad3b28"];
-    } else if (value >= 76 && value <= 89) {
+    } else if (value >= 96 && value <= 99) {
       return ["#dc7235", "#b15621"];
-    } else if (value >= 90 && value <= 100) {
-      return ["#2f743e", "#11461e"];
-    } else if (value > 100) {
+    } else if (value >= 100 && value <= 120) {
+      return ["#dc7235", "#b15621"];
+    } else if (value > 120) {
       return ["#2f743e", "#11461e"];
     }
 
@@ -97,21 +96,6 @@ class HeaderBlock extends Component {
         ? this.props.day_data.map(this.createPillows.bind(this))
         : "";
 
-    let toDM = (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        className="bi bi-caret-right-fill"
-        viewBox="0 0 16 16"
-        style={{
-          height: "1.2em",
-          width: "1.2em"
-        }}
-      >
-        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-      </svg>
-    );
-
     return (
       <div style={this.state.animationStyles} className="header-block-wrap">
         <div className="container-fluid d-flex">
@@ -127,7 +111,7 @@ class HeaderBlock extends Component {
             </div>
             <div className="col-9 circles">
               <div className="ml-3">
-                <p className="m-0 ml-2 text-secondary">вiдсоток вiд кращого:</p>
+                <p className="m-0 ml-2 text-secondary">КВП:</p>
                 <div className="p-1">
                   <HeaderBorderWrap>
                     <div className="d-flex">
@@ -137,24 +121,14 @@ class HeaderBlock extends Component {
                 </div>
               </div>
               <div className="w-100"></div>
-              {!this.props.is_dm && (
-                <span className="money">
-                  <h5>
-                    <span className="text-secondary">приблизно:&nbsp;</span>
-                    <strong>
-                      {this.props.money} <span className="z-red">ZV</span>
-                    </strong>
-                  </h5>
-                </span>
-              )}
-              {this.props.is_dm && (
-                <NavLink to="/dm">
-                  <div className="money careere-dm"><div className="d-flex">
-                      <h5 className="mb-1">Кар'єра ДМ</h5>
-                      <span className="d-flex align-items-center">{toDM}</span>
-                    </div></div>
-                </NavLink>
-              )}
+              <span className="money">
+                <h5>
+                  <span className="text-secondary">приблизно:&nbsp;</span>
+                  <strong>
+                    {this.props.money} <span className="z-red">ZV</span>
+                  </strong>
+                </h5>
+              </span>
             </div>
           </div>
         </div>

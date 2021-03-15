@@ -34,6 +34,8 @@
 
   .circles
     position: relative
+    display: flex
+    flex-direction: column
     .circle-wrap
 
       margin-left: 20px
@@ -43,3 +45,13 @@
       position: absolute
       right: 0
       bottom: 0
+
+
+
+    .careere-dm
+      color: c.$dark-c
+      padding: 5px
+      border-radius: s.$main-radius*.8
+      border: 2px solid #fff
+      transition: .3s
+      @include c.hover(c.$lignt-bg)
