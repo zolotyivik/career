@@ -147,14 +147,16 @@ class HeaderBlock extends Component {
                   </h5>
                 </span>
               )}
-              {this.props.is_dm && (
+              {/*Отключаем роутинг на страницу DM*/}
+              
+              {/* {this.props.is_dm && (
                 <NavLink to="/dm">
                   <div className="money careere-dm"><div className="d-flex">
                       <h5 className="mb-1">Кар'єра ДМ</h5>
                       <span className="d-flex align-items-center">{toDM}</span>
                     </div></div>
                 </NavLink>
-              )}
+              )} */}
             </div>
           </div>
         </div>

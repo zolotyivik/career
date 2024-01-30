@@ -1,9 +1,9 @@
-import { Component } from "react";
-import { HashRouter, Route } from "react-router-dom";
-import HeaderBlock from "./components/HeaderBlock";
-import HeaderBlockDM from "./components/HeaderBlockDM";
-import Tables from "./components/Tables";
-import ffetch from "./fetch";
+import { Component } from 'react';
+import { HashRouter, Route } from 'react-router-dom';
+import HeaderBlock from './components/HeaderBlock';
+import HeaderBlockDM from './components/HeaderBlockDM';
+import Tables from './components/Tables';
+import ffetch from './fetch';
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   async getUser() {
-    let url = window.zv.apiLink + "local/career/get";
+    let url = window.zv.apiLink + 'local/career/get';
     let data = {
       user_id: window.zv.user_id,
     };
@@ -77,8 +77,10 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <div className="app-wrap">
-          <Route exact path="/dm">
+        <div className='app-wrap'>
+          {/*Отключаем роутинг на страницу DM*/}
+          
+          {/* <Route exact path="/dm">
             {this.state.done &&
               this.state.user_data &&
               this.state.user_data.is_dm && (
@@ -100,9 +102,8 @@ class App extends Component {
                   rules={this.state.user_data.dm_data.merged}
                 />
               )}
-          </Route>
-
-          <Route exact path="/">
+          </Route> */}
+          <Route exact path='/'>
             {this.state.done && (
               <HeaderBlock
                 level_name={this.state.user_data.level_name}
@@ -113,18 +114,9 @@ class App extends Component {
               />
             )}
 
-            {!this.state.done && (
-              <div
-                style={{ minHeight: "300px" }}
-                className="header-block-wrap-animation"
-              ></div>
-            )}
+            {!this.state.done && <div style={{ minHeight: '300px' }} className='header-block-wrap-animation'></div>}
             {this.state.user_data && (
-              <Tables
-                is_dm={false}
-                money={this.money.bind(this)}
-                rules={this.state.user_data.rules.merged}
-              />
+              <Tables is_dm={false} money={this.money.bind(this)} rules={this.state.user_data.rules.merged} />
             )}
           </Route>
         </div>
